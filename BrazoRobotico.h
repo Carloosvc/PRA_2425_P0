@@ -1,19 +1,24 @@
+#ifndef BRAZOROBOTICO_H
 #define BRAZOROBOTICO_H
 
-class BrazoRobotico{
+class BrazoRobotico {
 
 private:
-	double x, y, z;
-	bool ObjetoSujeto;
+    double x, y, z;
+    bool objetoSujeto;
+
 public:
+    BrazoRobotico(double x, double y, double z);
 
-	BrazoRobotico(double x, double y, double z);
-	double getX() const;
-	double getY() const;
-	double getZ() const;
-	bool getObjetoSujeto() const;
-       void coger();
-	void soltar();
-	void mover(double nuevoX, double nuevoY, double nuevoZ);
+    double getX() const;
+    double getY() const;
+    double getZ() const;
+    bool getObjetoSujeto() const;
 
+    void coger();
+    void soltar();
+    void mover(double nuevoX, double nuevoY, double nuevoZ);
 };
+
+#endif
+

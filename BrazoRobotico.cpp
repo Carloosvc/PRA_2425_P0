@@ -1,50 +1,38 @@
+#include "BrazoRobotico.h"
 #include <iostream>
-using namespace std;
 
-class BrazoRobotico {
+BrazoRobotico::BrazoRobotico(double x, double y, double z)
+    : x(x), y(y), z(z), objetoSujeto(false) {}
 
-	private:
-		double x, y, z;
-		bool ObjetoSujeto;
-	public:
+double BrazoRobotico::getX() const {
+    return x;
+}
 
-		BrazoRobotico(double x,double y,double z, bool ObjetoSujeto){
-			this->x = x;
-			this->y = y;
-			this->z= z;
-			this->ObjetoSujeto = ObjetoSujeto;			
-		
-		}
+double BrazoRobotico::getY() const {
+    return y;
+}
 
-		double getX(){
-			return x;
-		}
+double BrazoRobotico::getZ() const {
+    return z;
+}
 
-		double getY(){
-			return y;
-		}
+bool BrazoRobotico::getObjetoSujeto() const {
+    return objetoSujeto;
+}
 
-		double getZ(){
-			return z;
-		}
+void BrazoRobotico::coger() {
+    objetoSujeto = true;
+}
 
-		bool getObjetoSujeto(){
-			return ObjetoSujeto;
-		}
+void BrazoRobotico::soltar() {
+    objetoSujeto = false;
+}
 
-		void coger(){
-			ObjetoSujeto == true;
-		}
-		void soltar(){
-			ObjetoSujeto == false;
-		}
+void BrazoRobotico::mover(double nuevoX, double nuevoY, double nuevoZ) {
+    x = nuevoX;
+    y = nuevoY;
+    z = nuevoZ;
+    std::cout << "El robot se ha movido a las coordenadas: "
+              << "x = " << x << " y = " << y << " z = " << z << std::endl;
+}
 
-		void mover(double nuevoX, double nuevoY, double nuevoZ){
-			x = nuevoX;
-			y = nuevoY;
-			z = nuevoZ;
-			cout << "El robot se ha movido a las coordenadas: " << " x = " <<
-				x << " y = " << y << " z = " << z << endl
-		
-		}
-};

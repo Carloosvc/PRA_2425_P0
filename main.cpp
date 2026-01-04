@@ -1,18 +1,23 @@
 #include "BrazoRobotico.h"
+#include <iostream>
 
-int main(){
+int main() {
 
-	BrazoRobotico Brazo1(0.00,0.00,0.00,false);
-	cout << "Posición inicial: ("
-		<< Brazo1.getX() << ", "
-		<< Brazo1.getY() << ", "
-		<< Brazo1.getZ() << ")\n";
-	Brazo1.coger();
-	cout << "El brazo ha cogido un objeto" << endl;
-	Brazo1.soltar();
-	cout << "El brazo ha soltado un objeto" << endl;
+    BrazoRobotico brazo1(0.0, 0.0, 0.0);
 
-	Brazo1.mover(10.0,10.0,10.0);
-	
-	return 0;
+    std::cout << "Posición inicial: ("
+              << brazo1.getX() << ", "
+              << brazo1.getY() << ", "
+              << brazo1.getZ() << ")\n";
+
+    brazo1.coger();
+    std::cout << "El brazo ha cogido un objeto" << std::endl;
+
+    brazo1.soltar();
+    std::cout << "El brazo ha soltado un objeto" << std::endl;
+
+    brazo1.mover(10.0, 10.0, 10.0);
+
+    return 0;
 }
+
